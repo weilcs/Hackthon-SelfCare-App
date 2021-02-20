@@ -45,7 +45,7 @@ export default function FocusSection(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem>
-              <h1>Don’t Let Yesterday Take Up Too Much Of Today.</h1>
+              <h1 className = {classes.inspirationText}>Don’t Let Yesterday Take Up Too Much Of Today.</h1>
             </GridItem>
             
           </GridContainer>

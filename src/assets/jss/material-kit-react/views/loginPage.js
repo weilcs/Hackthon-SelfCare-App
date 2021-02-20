@@ -1,6 +1,8 @@
+import { yellow } from "@material-ui/core/colors";
 import { container } from "assets/jss/material-kit-react.js";
 
 const signupPageStyle = {
+
   container: {
     ...container,
     zIndex: "2",
@@ -85,7 +87,11 @@ const signupPageStyle = {
   },
   inputIconsColor: {
     color: "#495057"
-  }
+  },
+  inspirationText:{
+    marginTop: "2rem",
+    marginBottom: "5rem",
+  },
 };
 
 export default signupPageStyle;
