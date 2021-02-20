@@ -28,8 +28,8 @@ import image from "assets/img/background.jpg";
 const useStyles = makeStyles(styles);
 
 export default function FocusSection(props) {
-  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  const [checkedA, setCheckedA] = React.useState(false);
+    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [checkedA, setCheckedA] = React.useState(false);
   const [checkedB, setCheckedB] = React.useState(false);
 
     const hi = ["You’re unique and one of a kind!", "You're the best of the best!", "Take the days just one at a time.", "Count your blessings, not your trouble", "Understand , have courage be strong","The longer one carries a problem, the heavier it gets"];
@@ -42,7 +42,7 @@ export default function FocusSection(props) {
   const classes = useStyles();
   const { ...rest } = props;
 
-  return (
+    return (
     <div>
       <div
         className={classes.pageHeader}
