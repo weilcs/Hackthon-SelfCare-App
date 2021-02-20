@@ -71,15 +71,11 @@ export default function HomePage(props) {
         {...rest}
       />
 
-
-      <Parallax image={require("assets/img/background.jpg")}>
-        <GridItem md={12} className={classes.textCenter}>  
+      <GridItem md={12} className={classes.textCenter}>  
           <FocusSection/>
-        </GridItem>
-      </Parallax>
-      
+      </GridItem>
 
-
+    
       <div className={classNames(gridClasses.main, gridClasses.mainRaised)}>
         <SectionCarousel />
       </div>
