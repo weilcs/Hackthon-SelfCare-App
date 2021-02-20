@@ -44,6 +44,12 @@ export default function FocusSection(props) {
       >
         <div className={classes.container}>
           <GridContainer justify="center">
+            <GridItem>
+              <h1>Don’t Let Yesterday Take Up Too Much Of Today.</h1>
+            </GridItem>
+            
+          </GridContainer>
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>

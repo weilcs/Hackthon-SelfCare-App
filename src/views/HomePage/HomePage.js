@@ -70,7 +70,6 @@ export default function HomePage(props) {
         }}
         {...rest}
       />
-
       <GridItem md={12} className={classes.textCenter}>  
           <FocusSection/>
       </GridItem>
