@@ -3,6 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
+import Switch from "@material-ui/core/Switch";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
@@ -27,11 +29,15 @@ const useStyles = makeStyles(styles);
 
 export default function FocusSection(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+  const [checkedA, setCheckedA] = React.useState(false);
+  const [checkedB, setCheckedB] = React.useState(false);
+
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+
   return (
     <div>
       <div
@@ -77,9 +83,28 @@ export default function FocusSection(props) {
                   <CardBody>
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
-                      START
-                    </Button>
+                  <div>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={checkedA}
+                          onChange={event => setCheckedA(event.target.checked)}
+                          value="checkedA"
+                          classes={{
+                            switchBase: classes.switchBase,
+                            checked: classes.switchChecked,
+                            thumb: classes.switchIcon,
+                            track: classes.switchBar
+                          }}
+                        />
+                      }
+                      classes={{
+                        label: classes.label
+                      }}
+                      label="Turn on Alert"
+                    />
+                  </div>
+
                   </CardFooter>
                 </form>
               </Card>
@@ -94,9 +119,27 @@ export default function FocusSection(props) {
                   <CardBody>
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
-                      START
-                    </Button>
+                    <div>
+                      <FormControlLabel
+                        control={
+                          <Switch
+                            checked={checkedB}
+                            onChange={event => setCheckedB(event.target.checked)}
+                            value="checkedB"
+                            classes={{
+                              switchBase: classes.switchBase,
+                              checked: classes.switchChecked,
+                              thumb: classes.switchIcon,
+                              track: classes.switchBar
+                            }}
+                          />
+                        }
+                        classes={{
+                          label: classes.label
+                        }}
+                        label="Turn on Alert"
+                      />
+                    </div>
                   </CardFooter>
                 </form>
               </Card>

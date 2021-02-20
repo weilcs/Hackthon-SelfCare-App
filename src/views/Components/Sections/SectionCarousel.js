@@ -3,6 +3,7 @@ import React from "react";
 import Carousel from "react-slick";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
 // @material-ui/icons
 import LocationOn from "@material-ui/icons/LocationOn";
 // core components
