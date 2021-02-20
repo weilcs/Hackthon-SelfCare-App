@@ -35,7 +35,13 @@ export default function FocusSection(props) {
   const [checkedA, setCheckedA] = React.useState(false);
   const [checkedB, setCheckedB] = React.useState(false);
 
-  setTimeout(function () {
+
+    const hi = ["You’re unique and one of a kind!", "You're the best of the best!", "Take the days just one at a time.", "Count your blessings, not your trouble", "Understand , have courage be strong","The longer one carries a problem, the heavier it gets"];
+    const random_NUM = parseInt(Math.random() * 6);
+    const a = hi[random_NUM];
+
+  setTimeout(function() {
+
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
@@ -53,8 +59,10 @@ export default function FocusSection(props) {
       >
         <div className={classes.container}>
           <GridContainer justify="center">
-            <GridItem>
-              <h1 className={classes.inspirationText}>Don’t Let Yesterday Take Up Too Much Of Today.</h1>
+
+                      <GridItem>
+                          <h1 className={classes.inspirationText}>{a}</h1>
+
             </GridItem>
 
           </GridContainer>
