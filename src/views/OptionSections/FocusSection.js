@@ -20,23 +20,28 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-
+import CountDownClock from "views/OptionSections/CountDownClock.js";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "assets/img/background.jpg";
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 const useStyles = makeStyles(styles);
+
+
 
 export default function FocusSection(props) {
     const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
     const [checkedA, setCheckedA] = React.useState(false);
   const [checkedB, setCheckedB] = React.useState(false);
 
+
     const hi = ["You’re unique and one of a kind!", "You're the best of the best!", "Take the days just one at a time.", "Count your blessings, not your trouble", "Understand , have courage be strong","The longer one carries a problem, the heavier it gets"];
     const random_NUM = parseInt(Math.random() * 6);
     const a = hi[random_NUM];
 
   setTimeout(function() {
+
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
@@ -54,10 +59,12 @@ export default function FocusSection(props) {
       >
         <div className={classes.container}>
           <GridContainer justify="center">
+
                       <GridItem>
                           <h1 className={classes.inspirationText}>{a}</h1>
+
             </GridItem>
-            
+
           </GridContainer>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
@@ -68,6 +75,7 @@ export default function FocusSection(props) {
                   </CardHeader>
                   <p className={classes.divider}>Focus fucntion description blablabla</p>
                   <CardBody>
+                    <CountDownClock></CountDownClock>
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
@@ -87,27 +95,27 @@ export default function FocusSection(props) {
                   <CardBody>
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                  <div>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={checkedA}
-                          onChange={event => setCheckedA(event.target.checked)}
-                          value="checkedA"
-                          classes={{
-                            switchBase: classes.switchBase,
-                            checked: classes.switchChecked,
-                            thumb: classes.switchIcon,
-                            track: classes.switchBar
-                          }}
-                        />
-                      }
-                      classes={{
-                        label: classes.label
-                      }}
-                      label="Turn on Alert"
-                    />
-                  </div>
+                    <div>
+                      <FormControlLabel
+                        control={
+                          <Switch
+                            checked={checkedA}
+                            onChange={event => setCheckedA(event.target.checked)}
+                            value="checkedA"
+                            classes={{
+                              switchBase: classes.switchBase,
+                              checked: classes.switchChecked,
+                              thumb: classes.switchIcon,
+                              track: classes.switchBar
+                            }}
+                          />
+                        }
+                        classes={{
+                          label: classes.label
+                        }}
+                        label="Turn on Alert"
+                      />
+                    </div>
 
                   </CardFooter>
                 </form>
