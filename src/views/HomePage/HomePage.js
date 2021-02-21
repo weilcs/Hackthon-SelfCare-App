@@ -33,6 +33,8 @@ import FocusSection from "views/OptionSections/FocusSection.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 
+
+
 const useStyles = makeStyles(styles);
 
 const gridStyles = makeStyles((theme) => ({
@@ -57,7 +59,8 @@ export default function HomePage(props) {
   const handleChange = (event) => {
     setSpacing(Number(event.target.value));
   };
-  return (
+    return (
+        Notification.requestPermission(),
     <div>
       <Header
         brand="Self Care"
