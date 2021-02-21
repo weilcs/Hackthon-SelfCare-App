@@ -29,16 +29,15 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 const useStyles = makeStyles(styles);
 
 
-
 export default function FocusSection(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [checkedA, setCheckedA] = React.useState(false);
   const [checkedB, setCheckedB] = React.useState(false);
+  const [startF, setStartF] = React.useState(false);
 
-
-    const hi = ["You’re unique and one of a kind!", "You're the best of the best!", "Take the days just one at a time.", "Count your blessings, not your trouble", "Understand , have courage be strong","The longer one carries a problem, the heavier it gets"];
-    const random_NUM = parseInt(Math.random() * 6);
-    const a = hi[random_NUM];
+  const hi = ["You’re unique and one of a kind!", "You're the best of the best!", "Take the days just one at a time.", "Count your blessings, not your trouble", "Understand , have courage be strong","The longer one carries a problem, the heavier it gets"];
+  const random_NUM = parseInt(Math.random() * 6);
+  const a = hi[random_NUM];
 
   setTimeout(function() {
 
@@ -60,9 +59,8 @@ export default function FocusSection(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
 
-                      <GridItem>
-                          <h1 className={classes.inspirationText}>{a}</h1>
-
+            <GridItem>
+              <h1 className={classes.inspirationText}>{a}</h1>
             </GridItem>
 
           </GridContainer>
@@ -75,10 +73,14 @@ export default function FocusSection(props) {
                   </CardHeader>
                   <p className={classes.divider}>Focus fucntion description blablabla</p>
                   <CardBody>
-                    <CountDownClock></CountDownClock>
+                    <CountDownClock focusStart = {startF}></CountDownClock>
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
+                    <Button simple color="primary" size="lg" 
+                      checked={startF}
+                      onClick={()=>setStartF( !startF)}
+                      value = {startF}
+                    >
                       START
                     </Button>
                   </CardFooter>

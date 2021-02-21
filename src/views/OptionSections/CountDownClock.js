@@ -26,7 +26,7 @@ const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
 const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
 //const getTimeDays = (time) => (time / daySeconds) | 0;
 
-export default function CountDownClock() {
+export default function CountDownClock({focusStart}) {
     const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
     const endTime = stratTime + 3248; // use UNIX timestamp in seconds
 
@@ -39,7 +39,7 @@ export default function CountDownClock() {
 
             <CountdownCircleTimer
                 {...timerProps}
-
+                isPlaying = {focusStart}
                 colors={[["#D14081"]]}
                 duration={daySeconds}
                 initialRemainingTime={remainingTime % daySeconds}
@@ -53,6 +53,7 @@ export default function CountDownClock() {
             </CountdownCircleTimer>
             <CountdownCircleTimer
                 {...timerProps}
+                isPlaying = {focusStart}
                 colors={[["#EF798A"]]}
                 duration={hourSeconds}
                 initialRemainingTime={remainingTime % hourSeconds}
@@ -66,7 +67,7 @@ export default function CountDownClock() {
             </CountdownCircleTimer>
             <CountdownCircleTimer
                 {...timerProps}
-                isPlaying={true}
+                isPlaying={focusStart}
                 colors={[["#218380"]]}
                 duration={minuteSeconds}
                 initialRemainingTime={remainingTime % minuteSeconds}
