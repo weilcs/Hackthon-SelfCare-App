@@ -30,8 +30,8 @@ const useStyles = makeStyles(styles);
 
 
 export default function FocusSection(props) {
-  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  const [checkedA, setCheckedA] = React.useState(false);
+    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [checkedA, setCheckedA] = React.useState(false);
   const [checkedB, setCheckedB] = React.useState(false);
   const [startF, setStartF] = React.useState(false);
 
@@ -46,7 +46,7 @@ export default function FocusSection(props) {
   const classes = useStyles();
   const { ...rest } = props;
 
-  return (
+    return (
     <div>
       <div
         className={classes.pageHeader}
